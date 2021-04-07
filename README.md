@@ -36,7 +36,8 @@ Se rendre à l'adresse donnée par le client pour voir le site
 ### Enregistrer-vous 
 Sur la page Register : prénom, nom , email , username et password tous les champs sont obligatoire.
 ### Login
-Page Login : Entrer son username et son password
+Page Login : Entrer son username et son password (à revoir)
+Entrer : username : marie , password : 123456
 
 # Navigation
 
