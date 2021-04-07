@@ -45,6 +45,16 @@ const routes = [
     // beforeEnter: checkTokenBeforeEnter
   },
   {
+    path: '/currencies/bitcoin',
+    name: 'Bitcoin',
+    component: () => import('../views/Bitcoin.vue')
+  },
+  {
+    path: '/currencies/ether',
+    name: 'Ether',
+    component: () => import('../views/Ether.vue')
+  },
+  {
     path: '/nothing',
     name: 'Nothing',
     component: () => import('../views/Nothing.vue')
