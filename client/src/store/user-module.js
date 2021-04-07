@@ -25,19 +25,19 @@ export default {
         login ({ commit }, credentials) {
             return api.login(credentials)
             .then(userdata => {
-            const { success, user, token, message } = userdata
-            if (!success) {
-                // TODO: Afficher proprement le message contenu dans `message` dans l'interface
-                //       et non dans la console comme ici
-                console.error(message)
-                // return
-                // return userdata.status(400).send({ message })
-                return false
-            }
-            localStorage.setItem('token', token)
-            commit('setUser', user)
-            return true
-            // commit('setToken', token)
+              const { success, user, token, message } = userdata
+              if (!success) {
+                  // TODO: Afficher proprement le message contenu dans `message` dans l'interface
+                  //       et non dans la console comme ici
+                  console.error(message)
+                  // return
+                  // return userdata.status(400).send({ message })
+                  return false
+              }
+              localStorage.setItem('token', token)
+              commit('setUser', user)
+              return true
+              // commit('setToken', token)
             })
         },
 
@@ -55,16 +55,16 @@ export default {
 
         return api.checkToken(token)
             .then(userdata => {
-            const { success, message, user } = userdata
+              const { success, message, user } = userdata
 
-            if (!success) {
-                // Afficher le message d'erreur à l'utilisateur
-                console.warn(message)
-                return false
-            }
+              if (!success) {
+                  // Afficher le message d'erreur à l'utilisateur
+                  console.warn(message)
+                  return false
+              }
 
-            commit('setUser', user)
-            return true
+              commit('setUser', user)
+              return true
             })
         },
 
@@ -77,15 +77,15 @@ export default {
             password: credentials.password
             })
           .then(userdata => {
-          const { success, message } = userdata
-          if (!success) {
-              // TODO: Afficher proprement le message contenu dans `message` dans l'interface
-              //       et non dans la console comme ici
-              console.error(message)
-              // return
-              return userdata.status(400).send({ message })
-            }
-          })
+            const { success, message } = userdata
+            if (!success) {
+                // TODO: Afficher proprement le message contenu dans `message` dans l'interface
+                //       et non dans la console comme ici
+                console.error(message)
+                // return
+                return userdata.status(400).send({ message })
+              }
+            })
         },
 
         modifyUser ({ commit }, userdata) {
